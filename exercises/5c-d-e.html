@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      body{
+        background-color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      const coffe = 5;
+      const bagels = 3;
+      const soup = 9;
+
+      let cost = 0;
+
+      cost = coffe + bagels * 2 + soup;
+      console.log(`Cost of food: $${cost}`);
+
+      let tax = cost * 0.1;
+      console.log(`Tax of food: $${tax}`);
+
+      let total = cost + tax;
+      console.log(`Grand Total: $${total}`);
+
+    </script>
+  </body>
+</html>
