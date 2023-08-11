@@ -37,13 +37,15 @@
         console.log('You can not drive');
       }
 
-      if (24 > 30) {
+
+      const temp = 24;
+      if (temp > 30) {
         console.log('Today is really hot');
-      } else if (30 > 24 && 24 > 20){
+      } else if (30 > temp && temp > 20){
         console.log('Ideal');
-      } else if (20 > 24 && 24> 10){
+      } else if (20 > temp && temp> 10){
         console.log('getting chilly');
-      } else if (10 > 24 && 24 > 0){
+      } else if (10 > temp && temp > 0){
         console.log('cold');
       } else {
         console.log('freezing');
