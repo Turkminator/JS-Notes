@@ -50,6 +50,69 @@
       } else {
         console.log('freezing');
       }
+
+      const cartQuantity = 5;
+      /*
+      if statement has a truthy value
+      if we don't have any items in cart
+      it will take 0 as value and 0 is falsy value
+      that wouldn't run the code block inside the 
+      statement
+      */
+      if (cartQuantity) {
+        console.log('cart has products');
+      }
+
+      /* !(not) operatörü falsy ifadeleri 
+      truthy'e çevirebilir */
+      console.log(!0);
+
+      /* bu işlem NaN sonucunu verecektir
+      Not a Number demektir*/
+      console.log('text' / 4);
+
+      /* değer atanmamış değişkenlerle
+      yapılan işlemler "undefined" soncunu verir*/
+      let variable1;
+      console.log(variable1);
+
+      /* const ile undefined değişken oluştururken
+      mutlaka eşitliğe belirtilmelidir */
+      const variable2 = undefined;
+      console.log(variable2);
+
+      /* Ternary (durumsal) operatör bir şartın sağlandığı ve
+      sağlanmadığı durumlarda yapılacak şeyi belirtir */
+      const result = true ? 'truthy' : 'falsy';
+      console.log(result);
+      /* yukarıdaki yazım şekli aşağıdakinin kısaltılmışı diyebiliriz */
+      if (true) {
+        console.log('truthy');
+      } else {
+        console.log('falsy');
+      }
+
+
+      /* Guard operatör iki durumdan ilki sağlandığında çalışır
+      Bu, genelde ikinci değer korunmak istendiğinde birinci değer
+      şart koşulunca kullanılır. İlk durum falsy ise fonksiyon çalışmaz*/
+
+      false && console.log('hello');
+      /* aşağıdakinin sadeleşmiş hali olarak düşünülebilir*/
+      if (false) {
+        console.log('hello');
+      }
+
+      /* OR operatörü iki durumdan birisinin sağlanıp sağlanmadığını 
+      kontrol eder ve en az bir truthy durumunda işlemi yapar */
+
+      const currency = 'EUR' || 'USD';
+      console.log(currency);
+      /* İlk durum geçerli olduğu için ikincisine bakılmaz */
+
+      const para = undefined || 'TRY';
+      console.log(para);
+      /* İlk para biri geçersiz olsa dahi ikincisi işleme konur */
     </script>
   </body>
 </html>
