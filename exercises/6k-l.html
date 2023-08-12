@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart Quantity</title>
+    <style>
+      body{
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="
+      console.log(`Cart Quantity: ${cartQuantity}`);
+    ">Show Quantity</button>
+
+    <button onclick="
+      if (cartQuantity <= 9){
+        cartQuantity++;
+      } else {
+        alert('Sepetinize 10 üründen fazla ekleyemezsiniz')
+      };
+      console.log(`Cart Quantity: ${cartQuantity}`);
+    ">Add to Cart</button>
+
+    <button onclick="
+      if (cartQuantity <= 8){
+        cartQuantity += 2;
+      } else {
+        alert('Sepetinize 10 üründen fazla ekleyemezsiniz')
+      };
+      console.log(`Cart Quantity: ${cartQuantity}`);
+    ">+2</button>
+
+    <button onclick="
+      if (cartQuantity <= 7){
+        cartQuantity += 3;
+      } else {
+        alert('Sepetinize 10 üründen fazla ekleyemezsiniz')
+      };
+      console.log(`Cart Quantity: ${cartQuantity}`);    
+    ">+3</button>
+
+    <button onclick="
+      if (cartQuantity <= 6){
+        cartQuantity += 4;
+      } else {
+        alert('Sepetinize 10 üründen fazla ekleyemezsiniz')
+      };
+      console.log(`Cart Quantity: ${cartQuantity}`)
+    ">+4</button>
+
+    <button onclick="
+      if (cartQuantity <= 5){
+        cartQuantity += 5;
+      } else {
+        alert('Sepetinize 10 üründen fazla ekleyemezsiniz')
+      };
+      console.log(`Cart Quantity: ${cartQuantity}`)
+    ">+5</button>
+
+    <button onclick="
+      if (cartQuantity >= 1){
+        cartQuantity -= 1;
+      } else {
+        alert('Sepette hiç ürün yok')
+      }
+      console.log(`Cart Quantity: ${cartQuantity}`)">
+    Remove an item</button>
+
+    <button onclick="
+      if (cartQuantity >= 2){
+        cartQuantity -= 2;
+      } else {
+        alert('Sepette 2 ya da daha az ürün var')
+      }
+      console.log(`Cart Quantity: ${cartQuantity}`)">
+    -2</button>
+
+    <button onclick="
+      if (cartQuantity >= 3){
+        cartQuantity -= 3;
+      } else {
+        alert('Sepette 3 ya da daha az ürün var')
+      }
+      console.log(`Cart Quantity: ${cartQuantity}`)">
+    -3</button>
+
+    <button onclick="
+      cartQuantity = 0;
+      console.log('Cart was reset.');
+      console.log(`Cart Quantity: ${cartQuantity}`);
+    ">Reset Cart</button>
+
+    <script>
+      let cartQuantity = 0;
+    </script>
+  </body>
+</html>
