@@ -86,6 +86,103 @@
       console.log(regularJSO);
       /* ilk haline döndü fakat JSON fonksiyon 
       desteklemediği için fonksiyonu kaybettik */
+
+      /*
+      propertyler objelere has değildir
+      objelerin dışında da default propertyler olabilir
+      */
+      console.log('hello'.length);
+
+      /* metodları da dahil edebiliriz */
+      console.log('hello'.toUpperCase());
+
+      /* 
+      obje olmasa da autoboxing ile special object
+      olarak kabul edilir ve objelerin yapabildiği şeyleri yapabilirler
+      */
+
+      /* objeler aynı zamanda referanslardır */
+
+      const object1 = {
+        message : 'hello'
+      };
+
+      /* 
+      değişkenler ve objeler aslında verilere ulaşmak için
+      kullanılan kısayollardır
+      veriler direkt olarak obje ve değişken adlarına atanmaz
+      veriler bilgisayar hafızasına kaydedilir 
+      obje ve değişkenler de bu verilerin adresleri gibi davranır
+      */
+
+      const object2 = object1;
+      /*
+      böyle bir değişken atamasına olanak sağlayan şey de budur
+      objeyi direkt olarak kopyalamak yerine referansını kopyalıyoruz
+      böylece iki farklı referans aynı objeye ulaşabiliyor
+      */
+
+      object1.message = 'Good Job!';
+      console.log(object1);
+      /*
+      const objenin adresini sabitler
+      objenin değiştirilebilmesine engel olmaz
+      */
+
+      console.log(object2);
+      /* aynı objeyi refere ettikleri için sonuç aynıdır */
+
+
+      const object3 = {
+        mesaj: 'Good Job!'
+      };
+
+      console.log(object3 === object1);
+      /*
+      Aynı value ve aynı property'e sahip olmalarına rağmen
+      birbirlerine eşit değildir 
+      Çünkü burada objeden ziyade referansları karşılaştırdık
+      Her referans ayrı adres taşıdığı için sonuç false olacaktır
+      */
+
+      /*
+      daha önceden bu iki referansı eşlediğimiz için
+      sonuç true olacaktır
+      */
+      console.log(object1 === object2);
+
+      /*
+      property bazında karşılaştırırsak
+      verdiği value aynı olacağından sonuç true olur
+      */
+      console.log(object3.message === object2.message);
+
+
+      const object4 = {
+        message: 'Good Job!'
+      };
+
+      /* bu objedeki property için kısayol atayalım */
+      const message = object4.message;
+      /* değişken adı ve property adı aynı ise
+      bunu şu şekilde de ifade edebiliriz */
+      console.log(message);
+
+      const {mesaj} = object3;
+      /*
+      mesaj değişkeni direkt olarak obje3'ün mesajını
+      refere ediyor
+      */
+      console.log(mesaj);
+
+
+      /* yukarıdaki değişkenler birer değerdir
+      ve bu değerleri istediğimiz gibi kullanabiliriz */
+
+      const object5 = {
+        message:mesaj
+      };
+      console.log(object5);
     </script>
   </body>
 </html>
