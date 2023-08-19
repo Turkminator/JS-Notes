@@ -18,23 +18,24 @@
       playGame('tails');
     " class="tails">tails</button>
     <script>
-      
+
+      let score = JSON.parse(localStorage.getItem('saved-score')) ||
+      {
+        wins: 0,
+        losses: 0,
+      };
       function playGame(guess){
-        let score = {
-          wins: 0,
-          losses: 0
-        };
-        
         const number = Math.random();
         const result = number < 0.5 ? 'heads' : 'tails';
 
-        console.log(guess === result ? 'You Win!' : 'You Lose!');
-        if (result === 'You Win!') {
-          localStorage.setItem(JSON.parse(score.wins++));
-        } else if (result=== 'You Lose!') {
-          localStorage.setItem(JSON.parse(score.losses++));
+        const message = guess === result ? 'You Win!' : 'You Lose!';
+        if (message === 'You Win!') {
+          score.wins++;
+        } else if (message === 'You Lose!') {
+          score.losses++;
         }
-        console.log(`wins: ${localStorage.getItem(JSON.stringify(score.wins++))}, losses: ${localStorage.getItem(JSON.stringify(score.losses++))}`);
+        console.log(`wins: ${score.wins}, losses: ${score.losses}`);
+        localStorage.setItem('saved-score', JSON.stringify(score));
       }
     </script>
   </body>
