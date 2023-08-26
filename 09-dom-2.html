@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+  </head>
+  <body>
+    <button>Hello</button>
+    <button class="js-button">Second button</button>
+    <script>
+      document.querySelector('button');
+      /*
+      document objesi ile body ve title dışında da 
+      elementlere ulaşabiliriz querySelector 
+      property'si sayfada spesifik olarak 
+      istenen bir elemente ulaşmaya yardımcı olur
+
+      yukarıdaki örnekte ilk button elementini seçtik
+      */
+      console.log(document.querySelector('button'));
+
+      /*
+      querySelector innerHTML gibi seçtiği elementi
+      string haline getirmez
+
+      fakat istersek seçtiğimiz elementin de 
+      innerHTML ile içeriğini görüntüleyebilir 
+      ya da değiştirebiliriz
+      */
+      console.log(document.querySelector('button').innerHTML);
+      document.querySelector('button').innerHTML = 'Merhaba';
+
+      /*
+      daha önceden buton seçtirmiştik ve ilk buton seçilmişti
+      aynı öge tipinden birden fazla varsa ikincisi o isimle seçilemez
+      o yüzden class ya da id atanır
+      */
+      document.querySelector('.js-button').innerHTML = 'bu da değişti';
+      /*
+      CSS'de HTML'de bulunan classları seçerken başına nokta koyuyoruz
+      burada da adının başına nokta koyarak seçeceğimiz elementin class 
+      olduğunu belirtmiş oluyoruz
+      */
+      
+      const buttonElement = document.querySelector('.js-button');
+      console.log(buttonElement);
+      /*
+      Elementler JavaScript içinde kullanılacaksa class adının
+      başına "js-"" konursa daha sonra okuması daha kolay olur.
+      
+      JavaScript içinde kullanılmış olan bir element eğer bir
+      değişkene atanacaksa, değişken adının sonuna "Element" 
+      eklenmesi faydalı olur
+
+      Yani DOM kullanarak bir HTML elementini JavaScript'e ekledik
+      ardından bu elementi bir değişkene atadık ve değişkeni
+      konsola yazdırdık
+
+      DOM ile HTML'e dair ne varsa kontrol edebiliyoruz
+      */
+      
+    </script>
+  </body>
+</html>
