@@ -1,39 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DOM</title>
-  </head>
-  <body>
-    <button>
-      hello
-    </button>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM</title>
+</head>
+<body>
+  <button>Hello</button>
+  <script>
+    /*
+    document bulunduğu html sayfasını içeren objedir
+    A'dan Z'ye bütün elementler, metodlar, yöntemler dahildir
 
-    <button>
-      merhaba
-    </button>
-    <script>
-      
-      console.log(document.querySelector('button'));
+    body HTML'in tarayıcı sayfasındaki görünen tarafıdır
+    document objesinden dot notation 
+    yolu ile body kısmına erişebiliyoruz
 
-      /*
-      console.log(document.title);
-      document.title = 'Changed';
+    innerHTML ise bulunduğu sayfadaki
+    bir elementin değerini ya da içeriğini
+    string olarak göstermek ya da onu değiştirmek için
+    kullanılan bir propertydir
+    */
+    console.log(document);
+    console.log(document.body);
 
-      console.log(document.body);
-
-      console.log(typeof document.body);
-
-      console.log(document.body.innerHTML);
-      document.body.innerHTML = '<button>Good Job!</button>';
-
-      */
-      /*
-      document.body.innerHTML = 'hello';
-      document.title = 'Good Job!';
-      */
-
-    </script>
-  </body>
+    /*
+    özetle, document bir objedir ve body
+    onun property'lerinden biridir
+    body de bir objedir ve innerHTML onun property'lerinden biridir
+    dot notation ile innerHTML nerede kullanılmak isteniyorsa
+    oraya doğru yönlendirme yapılarak işlem sağlanır
+    */
+    document.body.innerHTML = 'hello';
+    
+    //Örnek 2
+    document.title = 'Good Job!';
+  </script>
+</body>
 </html>

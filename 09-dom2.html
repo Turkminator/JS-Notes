@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM2</title>
+  </head>
+  <body>
+    <button>hello</button>
+    <script>
+      /*
+      document objesinde bulunan title
+      property'sini dot notation ile seçtik
+      */
+      console.log(document.title);
+
+      /* title console'a basıldıktan sonra değiştirildi */
+      document.title = 'Changed';
+
+      /*
+      HTML ögesi olan body'i JS içine aldık 
+      konsolda görüntüleyelim
+      */
+      console.log(document.body);
+
+
+      /*
+      HTML elementleri JavaScript'te obje olarak kullanılır
+      */
+      console.log(typeof document.body);
+
+
+      /*
+      DOM (document object model) HTML 
+      ile JavaScript'i bir araya getirir
+      */
+    </script>
+  </body>
+</html>
