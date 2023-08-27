@@ -7,7 +7,7 @@
   </head>
   <body>
     <button>Hello</button>
-    <button class="js-button">Second button</button>
+    <button class="js-button" onclick="elemanOlustur()">Second button</button>
     <script>
       document.querySelector('button');
       /*
@@ -60,6 +60,16 @@
       DOM ile HTML'e dair ne varsa kontrol edebiliyoruz
       */
       
+      function elemanOlustur () {
+        const button1 = document.createElement('button');
+        button1.textContent='buton';
+        document.body.appendChild(button1);
+      }
+
+      /*
+      Element oluştururken bir fonksiyon oluşturup
+      o fonksiyonu html içinde çağıracak bir aksiyoma eklemek gerekir
+      */
     </script>
   </body>
 </html>
