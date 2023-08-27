@@ -6,30 +6,59 @@
     <title>Document</title>
   </head>
   <body>
-    <p id="demo">something</p>
     <button onclick="
-    document.getElementById('wallpaper').src='ocean.jpg'">okyanus</button>
-    <img id='wallpaper' src="yeşillik.jpg" alt="">
+      playGame('paper')
+    ">paper</button>
+    
     <button onclick="
-    document.getElementById('wallpaper').src='yeşillik.jpg'">yeşillik</button>
-    <script>
-      document.getElementById('demo').innerHTML = "Somethingelse";
+      playGame('rock')
+    ">rock</button>
 
-      const person = {
-        firstName:"John",
-        lastName: "Doe",
-        fullName: function () {
-          return this.firstName + " " + this.lastName;
+    <button onclick="
+      playGame('scissors')
+    ">scissors</button>
+    <script>
+      function playGame (playerMove) {
+        //bilgisayar hareketlerini rastgele belirledik
+        const computerMove = Math.random();
+        //rastgele gelen sayılara hamle atadık
+        if(computerMove < 1/3){
+          computerPick = "paper";
+        } else if (computerMove >= 1 / 3 && computerMove < 2 / 3) {
+          computerPick = "rock";
+        } else {
+          computerPick = "scissors";
+        }
+        //gelen hamleyi konsolda kontrol ettik
+        console.log(computerPick);
+
+        /*
+        oyuncu seçimi ile bilgisayar seçimini farklı senaryolarda değerlendirdik
+        */
+        if (playerMove === 'paper' && computerPick === 'paper') {
+          console.log('tie');
+        } else if (playerMove === 'paper' && computerPick === 'rock'){
+          console.log('you win')
+        } else if (playerMove === 'paper' && computerPick === 'scissors') {
+          console.log('you lose')
+        }
+
+        if (playerMove === 'rock' && computerPick === 'paper') {
+          console.log('you lose');
+        } else if (playerMove === 'rock' && computerPick === 'rock'){
+          console.log('tie')
+        } else if (playerMove === 'rock' && computerPick === 'scissors') {
+          console.log('you win')
+        }
+
+        if (playerMove === 'scissors' && computerPick === 'paper') {
+          console.log('you win');
+        } else if (playerMove === 'scissors' && computerPick === 'rock'){
+          console.log('you lose')
+        } else if (playerMove === 'scissors' && computerPick === 'scissors') {
+          console.log('tie')
         }
       }
-
-      const member = {
-        firstName:"Hege",
-        lastName: "Nilsen",
-      }
-
-      let fullName = person.fullName.bind(member);
-      console.log(fullName());
     </script>
   </body>
 </html>
