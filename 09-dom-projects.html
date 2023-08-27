@@ -6,17 +6,16 @@
     <title>DOM projects</title>
   </head>
   <body>
-    <p>Youtube Subscribe Button</p>
-    <button class="js-subscribe-button" onclick="
-    const buttonElement = document.querySelector('.js-subscribe-button');
-
-    if(buttonElement.innerHTML === 'Subscribe') {
-      buttonElement.innerHTML = 'Subscribed';
+    <p>YouTube Subscribe Button</p>
+    <button id="buton" onclick="
+    if (document.getElementById('buton').innerHTML === 'Subscribe') {
+      document.getElementById('buton').innerHTML = 'Subscribed'
     } else {
-      buttonElement.innerHTML = 'Subscribe';
+      document.getElementById('buton').innerHTML = 'Subscribe'
     }
     ">Subscribe</button>
     <script>
+
     </script>
   </body>
 </html>
