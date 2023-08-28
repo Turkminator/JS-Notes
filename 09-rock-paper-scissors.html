@@ -92,10 +92,8 @@
         updateScoreElement();
 
         document.querySelector('.js-result').innerHTML = result;
-        document.querySelector('.js-moves').innerHTML = `You picked ${playerMove}. Computer picked ${computerMove}`;
-        
+        document.querySelector('.js-moves').innerHTML = `You picked ${playerMove}. Computer picked ${computerMove}`; 
       }
-
 
       function updateScoreElement() {
         document.querySelector('.js-score').innerHTML = `Wins: ${score.wins}. Losses:${score.losses}. Ties: ${score.ties}`;
