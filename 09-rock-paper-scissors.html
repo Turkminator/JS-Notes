@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
     <style>
-      body{
-        background-color: black;
-      }
+      
     </style>
   </head>
   <body>
@@ -49,6 +47,7 @@
         
       function playGame(playerMove){
         const computerMove = pickComputerMove();
+
         let result = '';
 
         if(playerMove === 'scissors'){
@@ -100,8 +99,9 @@
       }
       
       function pickComputerMove(){
-        let computerMove= '';
         const randomNumber = Math.random();
+        let computerMove= '';
+        
         if (randomNumber <= 0.33 && randomNumber >= 0) {
           computerMove = 'rock';
         } else if (randomNumber > 0.33 && randomNumber <= 0.66) {
