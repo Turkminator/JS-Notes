@@ -15,20 +15,18 @@
       onkeydown="handleCostKeyDown();"
     >
     <button onclick="
-      calculateTotal(event);
+      calculateTotal();
     ">Calculate</button>
     <p class="js-total-cost"></p>
 
-
-    //event argümanı olmadan da çalışıyor, metine sor
     <script>
-      function handleCostKeyDown(event){
+      function handleCostKeyDown(){
         if (event.key === 'Enter') {
           calculateTotal();
         }
       }
 
-
+      //event argümanı olmadan da çalışıyor, metine sor
       function calculateTotal(){
         const inputElement = document.querySelector('.js-cost-input');
         let cost = Number(inputElement.value);
