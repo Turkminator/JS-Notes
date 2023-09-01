@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart Quantity</title>
+    <style>
+      body{
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="
+      displayQuantity();
+    ">Show Quantity</button>
+
+    <button onclick="
+      updateCartQuantity(+1);
+    ">Add to Cart</button>
+
+    <button onclick="
+      updateCartQuantity(+2);
+    ">+2</button>
+
+    <button onclick="
+      updateCartQuantity(+3);
+    ">+3</button>
+
+    <button onclick="
+      updateCartQuantity(+4);
+    ">+4</button>
+
+    <button onclick="
+      updateCartQuantity(+5);
+    ">+5</button>
+
+    <button onclick="
+      updateCartQuantity(-1);
+    ">
+    Remove an item</button>
+
+    <button onclick="
+      updateCartQuantity(-2);
+    ">
+    -2</button>
+
+    <button onclick="
+      updateCartQuantity(-3);
+    ">
+    -3</button>
+
+    <button onclick="
+      cartQuantity = 0;
+      displayQuantity();
+    ">Reset Cart</button>
+
+    <p class="quantityP"></p>
+    <script>
+      let cartQuantity = 0;
+      function updateCartQuantity(value){
+        
+        if ((cartQuantity + value) > 10 || (cartQuantity + value) < 0){
+          alert('Sepetteki ürün sayısı 10 ile 0 arasında olmalıdır')
+        } else {
+          cartQuantity = cartQuantity + value;
+          displayQuantity();
+        }        
+      }
+
+      function displayQuantity(){
+        document.querySelector('.quantityP').innerHTML = `Cart Quantity: ${cartQuantity}`;
+      }
+    </script>
+  </body>
+</html>
