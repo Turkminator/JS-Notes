@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      background-color: black;
+    }
+  </style>
+</head>
+<body>
+  <button class="js-button buton-be">Test</button>
+  <script>
+    /* 
+    html elementler birden fazla sınıf adı alabilir
+    js-button'u seçip içinde aynı ya da farklı sınıf adı var mı diye kontrol ettik
+    classList.contains seçilen sınıfın içindeki isimleri kontrol ettirir
+    */
+    console.log(document.querySelector('.js-button').classList.contains('js-button'));
+    console.log(document.querySelector('.js-button').classList.contains('buton-be'));
+  </script>
+</body>
+</html>
