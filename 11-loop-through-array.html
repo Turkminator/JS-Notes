@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //array elemanları alt alta yazılabiliyordu
+      const todoList = [
+        'make dinner',
+        'wash dishes',
+        'watch youtube'
+      ]
+
+      /*
+      while döngüsünde başlangıç noktasını dışarıda değişken oluşturarak
+      belirliyorduk fakat for döngüsünde bunu parantez içinde yapabiliyoruz
+
+      array'in eleman sayısı son index'inin bir fazlası kadardır
+      çünkü array indexi 0'dan başlar
+
+      index todoList'in eleman sayısının bir eksiği olana kadar
+      index'e bir ekleyerek devam ediyoruz ve şart artık sağlanmayana kadar
+      her seferinde süslü parantez içindeki işlemi yaptırıyoruz
+      */
+
+
+      for (let index = 0; index <= todoList.length -1; index++){
+        const value = console.log(index);
+        console.log(value);
+      }
+
+      
+      // Böylece array'i konu alan bir döngü oluşturmuş olduk
+
+    </script>
+  </body>
+</html>
