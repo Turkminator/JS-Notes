@@ -1,0 +1,12 @@
+body{
+  background-color: black;
+}
+button{
+  padding: 100px;
+}
+.b1{
+  background-color: green;
+}
+.b3{
+  border-radius: 50%;
+}
