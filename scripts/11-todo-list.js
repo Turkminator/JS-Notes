@@ -1,4 +1,10 @@
-const todoList = ['yemek', 'bulaşık'];
+const todoList = [{
+  name: 'yemek',
+  dueDate: '2023-09-15'
+},{
+  name: 'bulaşık',
+  dueDate: '2023-09-16'
+}];
 
 renderTodoList();
 
@@ -12,10 +18,20 @@ function renderTodoList(){
   let todoListHTML = '';
 
   for (let i = 0; i<todoList.length; i++){
-    const todo = todoList[i];
+    const todoObject = todoList[i];
+    const name = todoObject.name;
+    const dueDate = todoObject.dueDate;
     //listedekileri göstermek için div elementi açtık
     //oraya eklemek üzere her elemana bir paragraf elementi verdik
-    const html = `<p>${todo}</p>`
+    //paragraf elementi içine o paragrafı silebilmek için bir buton koyduk
+    //böylece todo listesindeki her elemanın karşısında bir silme butonu olacak
+    const html = `<p>
+      ${name} ${dueDate} 
+      <button onclick="
+        todoList.splice(${i}, 1);
+        renderTodoList();
+      ">delete</button>
+    </p>`
     //paragraf elementlerini yukarıdaki değişkene atadık
     todoListHTML += html;
   }
@@ -28,7 +44,14 @@ function addTodo(){
   //input'a verilen değerleri name değişkenine atadık
   const name = inputElement.value;
   // değeri listeye ekledik
-  todoList.push(name);
+  const dateInputElement = document.querySelector('.js-due-date-input');
+  const dueDate = dateInputElement.value;
+  //tarih girdisini bir değişkene atadıktan sonra (innerHTML input'ta çalışmaz)
+  //tarih girdiden gelen veriyi de bir değişkene atıyoruz
+  todoList.push({
+    name: name,
+    dueDate: dueDate
+  });
   console.log(todoList);
   //değer girdikten sonra placeholder çalışsın diye boş değer attık
   inputElement.value = '';
