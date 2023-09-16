@@ -25,13 +25,18 @@ function renderTodoList(){
     //oraya eklemek üzere her elemana bir paragraf elementi verdik
     //paragraf elementi içine o paragrafı silebilmek için bir buton koyduk
     //böylece todo listesindeki her elemanın karşısında bir silme butonu olacak
-    const html = `<p>
-      ${name} ${dueDate} 
-      <button onclick="
-        todoList.splice(${i}, 1);
-        renderTodoList();
-      ">delete</button>
-    </p>`
+    const html = `
+    <div>
+      ${name}
+    </div>
+    <div>
+      ${dueDate}
+    </div> 
+    <button onclick="
+      todoList.splice(${i}, 1);
+      renderTodoList();
+    ">Delete</button>
+    `
     //paragraf elementlerini yukarıdaki değişkene atadık
     todoListHTML += html;
   }
