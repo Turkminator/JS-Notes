@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+      Arrayler de objeler gibi aslında referanstır.
+      */
+
+      const array1 = [1, 2, 3];
+      //array1 1,2,3 değerlerinin içinde olduğu bir liste değil, o listeyi hafızada gösteren bir referans
+      const array2 = array1;
+      //array2 da değerleri değil, değerleri barındıran yerin referansı tutar
+      array2.push(4);
+      //array2'yu kullanarak listeye 4'ü pushladık
+      //array1 ve array2 aynı listenin referansı oldukları için
+      //listede değişiklik yapılması için herhangi bir referansı kullanabiliyoruz
+      //ve yine görüntüleyebilmek için herhangi bir referansı kullanabiliyoruz
+      console.log(array1);
+      console.log(array2);
+
+      //istenildiğinde aynı listeden birden fazla liste türetilebilir
+      //türetilen yeni liste tamamen ayrı bir liste olarak davranır
+      const array3 = array1.slice();
+      //array3 array1'ın bir kesitini hedefler ve hedeflenen kesit yeni bir liste olarak davranır
+      array3.push(5);
+      console.log(array1);
+      console.log(array2);
+      console.log(array3);
+
+      const [firstValue, secondValue] = [1,2,3];
+    </script>
+  </body>
+</html>
